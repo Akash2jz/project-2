@@ -1,0 +1,49 @@
+.glow-target {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-target::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 160ms ease;
+  background: radial-gradient(
+    420px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+    rgba(0, 217, 87, 0.22),
+    rgba(0, 217, 87, 0.10) 35%,
+    transparent 65%
+  );
+}
+
+.glow-target:hover::before,
+.glow-target:focus-within::before {
+  opacity: 1;
+}
+
+.glow-pop {
+  transition: transform 160ms ease, border-color 160ms ease;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.glow-target:hover.glow-pop,
+.glow-target:focus-within.glow-pop {
+  transform: translateY(-3px);
+  border-color: rgba(0, 217, 87, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow-target::before {
+    transition: none;
+  }
+  .glow-pop {
+    transition: none;
+  }
+  .glow-target:hover.glow-pop,
+  .glow-target:focus-within.glow-pop {
+    transform: none;
+  }
+}
+

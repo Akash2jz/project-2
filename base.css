@@ -1,0 +1,47 @@
+:root {
+  --kawa-green: #00b140;
+  --kawa-green-2: #00d957;
+  --ink: #0c1014;
+  --muted: #b8c2cc;
+  --card: rgba(12, 16, 20, 0.72);
+  --line: rgba(255, 255, 255, 0.12);
+  --bg: #070a0e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #f5f7fa;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  line-height: 1.55;
+  background: var(--bg);
+}
+
+a {
+  color: var(--kawa-green-2);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+.container {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--card);
+  padding: 16px;
+}
+
+.muted {
+  color: var(--muted);
+}
